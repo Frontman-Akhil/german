@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 import { useAppStore } from '../store/useAppStore';
 import { CURRICULUM, getLessonById } from '../data/curriculum';
+import { A1_STUDY_GUIDES } from '../data/a1StudyGuides';
 import type { Exercise } from '../types';
 import {
   ProgressBar, AudioButton, AnswerFeedback, LevelBadge,
@@ -339,6 +340,7 @@ export function LessonPlayer() {
 
   const totalExercises = lesson.exercises.length;
   const currentExercise = lesson.exercises[exerciseIndex];
+  const studyGuide = A1_STUDY_GUIDES[lesson.id];
 
   const handleExerciseAnswer = (correct: boolean) => {
     setExerciseAnswered(true);
@@ -464,6 +466,73 @@ export function LessonPlayer() {
               </div>
             </div>
           </div>
+
+          {/* Start Simple study guide (A1) */}
+          {studyGuide && (
+            <div className="card p-5 border-l-4 border-emerald-500">
+              <div className="flex items-center gap-2 mb-3">
+                <Lightbulb className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
+                <p className="font-semibold text-slate-800 dark:text-white text-sm">Start Simple</p>
+                <span className="chip-neutral text-[10px]">A1 basics</span>
+              </div>
+
+              {lang !== 'Hinglish' && (
+                <p className="text-slate-700 dark:text-slate-200 text-sm">{studyGuide.simple}</p>
+              )}
+              {lang !== 'English' && (
+                <p className={clsx(
+                  'text-slate-600 dark:text-slate-300 text-sm italic',
+                  lang === 'Both' && 'mt-2',
+                )}>
+                  {studyGuide.simpleHinglish}
+                </p>
+              )}
+
+              <div className="mt-4 space-y-2">
+                <p className="text-[10px] font-medium text-slate-400">Step by step:</p>
+                {lang !== 'Hinglish' && (
+                  <ol className="space-y-2">
+                    {studyGuide.steps.map((step, i) => (
+                      <li key={i} className="flex items-start gap-2 text-sm text-slate-700 dark:text-slate-200">
+                        <span className="w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300 text-[10px] font-bold flex items-center justify-center flex-shrink-0 mt-0.5">
+                          {i + 1}
+                        </span>
+                        {step}
+                      </li>
+                    ))}
+                  </ol>
+                )}
+                {lang !== 'English' && (
+                  <div className={clsx(lang === 'Both' && 'mt-3 pt-3 border-t border-slate-200 dark:border-slate-700')}>
+                    {lang === 'Both' && (
+                      <p className="text-[10px] font-medium text-slate-400 mb-2">Hinglish mein:</p>
+                    )}
+                    <ol className="space-y-2">
+                      {studyGuide.stepsHinglish.map((step, i) => (
+                        <li key={i} className="flex items-start gap-2 text-sm text-slate-600 dark:text-slate-300 italic">
+                          <span className="w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300 text-[10px] font-bold flex items-center justify-center flex-shrink-0 mt-0.5">
+                            {i + 1}
+                          </span>
+                          {step}
+                        </li>
+                      ))}
+                    </ol>
+                  </div>
+                )}
+              </div>
+
+              <div className="mt-4 pt-4 border-t border-slate-200 dark:border-slate-700">
+                <p className="text-[10px] font-medium text-slate-400 mb-2">One more example:</p>
+                <GermanPhrase
+                  german={studyGuide.extraExample.german}
+                  english={studyGuide.extraExample.english}
+                  hinglish={studyGuide.extraExample.hinglish}
+                  showHinglish={lang !== 'English'}
+                  size="md"
+                />
+              </div>
+            </div>
+          )}
 
           {/* Warm-up */}
           {lesson.content.warmUp && lesson.content.warmUp.length > 0 && (
