@@ -1,9 +1,26 @@
 // ============================================================
 // GERMAN LANGUAGE ACADEMY – CURRICULUM DATA
-// A1 Complete + Sample modules for A2–C2
+// A1 Complete + Structured modules for A2–C2
 // ============================================================
 
 import type { Module, Lesson, CEFRLevel } from '../types';
+import { A1_MODULE_VERBS } from './a1Verbs';
+import { A1_MODULE_QUESTIONS } from './a1Questions';
+import { A1_MODULE_CASES } from './a1Cases';
+import { A1_MODULE_TIME } from './a1Time';
+import { A1_MODULE_EVERYDAY } from './a1Everyday';
+import { A1_MODULE_FAMILY } from './a1FamilyRoutine';
+import { A1_MODULE_FREETIME } from './a1FreeTime';
+import { A1_MODULE_PREPOSITIONS } from './a1Prepositions';
+import { A1_MODULE_HOMEHEALTH } from './a1HomeHealth';
+import { A1_MODULE_WORKTRAVEL } from './a1WorkTravel';
+import { A1_MODULE_PASTBASICS } from './a1PastBasics';
+import { A2_MODULE_PAST } from './a2Past';
+import { A2_MODULE_TRAVEL } from './a2Travel';
+import { B1_MODULE_OPINIONS } from './b1Opinions';
+import { B2_MODULE_STRUCTURES } from './b2Structures';
+import { C1_MODULE_NUANCE } from './c1Nuance';
+import { C2_MODULE_IDIOMS } from './c2Idioms';
 
 // ——— A1 MODULE 1: ALPHABET & PRONUNCIATION ———
 const A1_MODULE_1: Module = {
@@ -15,7 +32,7 @@ const A1_MODULE_1: Module = {
   descriptionHinglish: 'German alphabet, special characters (ä, ö, ü, ß) aur basic pronunciation sikho.',
   skills: ['listening', 'speaking'],
   order: 1,
-  isComplete: false,
+  isComplete: true,
   lessons: [
     {
       id: 'l-a1-01-01',
@@ -287,7 +304,7 @@ const A1_MODULE_2: Module = {
   descriptionHinglish: 'Seekho log-on ko kaise greet karo, apna parichay do aur basic sawal karo.',
   skills: ['speaking', 'listening'],
   order: 2,
-  isComplete: false,
+  isComplete: true,
   lessons: [
     {
       id: 'l-a1-02-01',
@@ -628,7 +645,7 @@ const A1_MODULE_3: Module = {
   descriptionHinglish: 'German mein girna, time batana, aur din, mahine aur tarikh ke baare mein bolna seekho.',
   skills: ['listening', 'speaking', 'vocabulary'],
   order: 3,
-  isComplete: false,
+  isComplete: true,
   lessons: [
     {
       id: 'l-a1-03-01',
@@ -737,7 +754,7 @@ const A1_MODULE_4: Module = {
   descriptionHinglish: 'German mein grammatical gender aur der, die, das (articles) seekho.',
   skills: ['grammar', 'vocabulary'],
   order: 4,
-  isComplete: false,
+  isComplete: true,
   lessons: [
     {
       id: 'l-a1-04-01',
@@ -868,8 +885,8 @@ const A1_MODULE_4: Module = {
   ],
 };
 
-// ——— SAMPLE MODULES FOR A2–C2 ———
-const A2_SAMPLE_MODULE: Module = {
+// ——— A2–C2 CORE MODULES ———
+const A2_MODULE_DAILY: Module = {
   id: 'm-a2-01',
   level: 'A2',
   title: 'Daily Life & Routines',
@@ -878,8 +895,7 @@ const A2_SAMPLE_MODULE: Module = {
   descriptionHinglish: 'Roz ke kaam, kaam ke schedule aur personal experiences ke baare mein bolna seekho.',
   skills: ['speaking', 'reading', 'vocabulary', 'grammar'],
   order: 1,
-  isComplete: false,
-  isSample: true,
+  isComplete: true,
   lessons: [
     {
       id: 'l-a2-01-01',
@@ -924,7 +940,7 @@ const A2_SAMPLE_MODULE: Module = {
   ],
 };
 
-const B1_SAMPLE_MODULE: Module = {
+const B1_MODULE_WORK: Module = {
   id: 'm-b1-01',
   level: 'B1',
   title: 'Work & Ausbildung',
@@ -933,8 +949,7 @@ const B1_SAMPLE_MODULE: Module = {
   descriptionHinglish: 'Ausbildung ke avedan, interview aur kaam ke communication ke liye taiyaari karo.',
   skills: ['speaking', 'writing', 'reading'],
   order: 1,
-  isComplete: false,
-  isSample: true,
+  isComplete: true,
   lessons: [
     {
       id: 'l-b1-01-01',
@@ -979,7 +994,7 @@ const B1_SAMPLE_MODULE: Module = {
   ],
 };
 
-const B2_SAMPLE_MODULE: Module = {
+const B2_MODULE_ARGUMENTS: Module = {
   id: 'm-b2-01',
   level: 'B2',
   title: 'Arguments & Academic Language',
@@ -988,8 +1003,7 @@ const B2_SAMPLE_MODULE: Module = {
   descriptionHinglish: 'Complex opinions express karna, advanced connectors use karna aur structured essays likhna.',
   skills: ['writing', 'speaking', 'reading'],
   order: 1,
-  isComplete: false,
-  isSample: true,
+  isComplete: true,
   lessons: [
     {
       id: 'l-b2-01-01',
@@ -1033,7 +1047,7 @@ const B2_SAMPLE_MODULE: Module = {
   ],
 };
 
-const C1_SAMPLE_MODULE: Module = {
+const C1_MODULE_ACADEMIC: Module = {
   id: 'm-c1-01',
   level: 'C1',
   title: 'Academic & Professional German',
@@ -1042,8 +1056,7 @@ const C1_SAMPLE_MODULE: Module = {
   descriptionHinglish: 'Complex academic texts, professional presentations aur advanced grammar master karo.',
   skills: ['reading', 'writing', 'speaking', 'grammar'],
   order: 1,
-  isComplete: false,
-  isSample: true,
+  isComplete: true,
   lessons: [
     {
       id: 'l-c1-01-01',
@@ -1087,7 +1100,7 @@ const C1_SAMPLE_MODULE: Module = {
   ],
 };
 
-const C2_SAMPLE_MODULE: Module = {
+const C2_MODULE_PROFICIENCY: Module = {
   id: 'm-c2-01',
   level: 'C2',
   title: 'Near-Native Proficiency',
@@ -1096,8 +1109,7 @@ const C2_SAMPLE_MODULE: Module = {
   descriptionHinglish: 'Implicit meaning, irony, nuance samajhna aur stylistically excellent German produce karna.',
   skills: ['reading', 'writing', 'speaking', 'listening'],
   order: 1,
-  isComplete: false,
-  isSample: true,
+  isComplete: true,
   lessons: [
     {
       id: 'l-c2-01-01',
@@ -1143,12 +1155,28 @@ const C2_SAMPLE_MODULE: Module = {
 
 // ——— EXPORT CURRICULUM ———
 export const CURRICULUM: Record<CEFRLevel, Module[]> = {
-  A1: [A1_MODULE_1, A1_MODULE_2, A1_MODULE_3, A1_MODULE_4],
-  A2: [A2_SAMPLE_MODULE],
-  B1: [B1_SAMPLE_MODULE],
-  B2: [B2_SAMPLE_MODULE],
-  C1: [C1_SAMPLE_MODULE],
-  C2: [C2_SAMPLE_MODULE],
+  A1: [
+    A1_MODULE_1,
+    A1_MODULE_2,
+    A1_MODULE_3,
+    A1_MODULE_4,
+    A1_MODULE_VERBS,
+    A1_MODULE_QUESTIONS,
+    A1_MODULE_CASES,
+    A1_MODULE_TIME,
+    A1_MODULE_EVERYDAY,
+    A1_MODULE_FAMILY,
+    A1_MODULE_FREETIME,
+    A1_MODULE_PREPOSITIONS,
+    A1_MODULE_HOMEHEALTH,
+    A1_MODULE_WORKTRAVEL,
+    A1_MODULE_PASTBASICS,
+  ],
+  A2: [A2_MODULE_DAILY, A2_MODULE_PAST, A2_MODULE_TRAVEL],
+  B1: [B1_MODULE_WORK, B1_MODULE_OPINIONS],
+  B2: [B2_MODULE_ARGUMENTS, B2_MODULE_STRUCTURES],
+  C1: [C1_MODULE_ACADEMIC, C1_MODULE_NUANCE],
+  C2: [C2_MODULE_PROFICIENCY, C2_MODULE_IDIOMS],
 };
 
 export const ALL_MODULES: Module[] = Object.values(CURRICULUM).flat();
