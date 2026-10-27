@@ -4,9 +4,17 @@ export default {
   darkMode: 'class',
   theme: {
     extend: {
+      screens: {
+        xs: '420px',
+        '3xl': '1920px',
+      },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
         display: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+      },
+      transitionTimingFunction: {
+        spring: 'cubic-bezier(0.22, 1, 0.36, 1)',
+        smooth: 'cubic-bezier(0.4, 0, 0.2, 1)',
       },
       colors: {
         // German flag-inspired but refined
@@ -77,6 +85,8 @@ export default {
         'pulse-brand': 'pulseBrand 2s cubic-bezier(0.4,0,0.6,1) infinite',
         'spin-slow': 'spin 3s linear infinite',
         'progress': 'progress 1s ease-out forwards',
+        'float': 'float 3s ease-in-out infinite',
+        'pop': 'pop 0.25s cubic-bezier(0.22, 1, 0.36, 1)',
       },
       keyframes: {
         slideUp: {
@@ -103,6 +113,14 @@ export default {
           '0%': { strokeDashoffset: '283' },
           '100%': { strokeDashoffset: 'var(--dash-offset)' },
         },
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-6px)' },
+        },
+        pop: {
+          '0%': { opacity: '0', transform: 'scale(0.94)' },
+          '100%': { opacity: '1', transform: 'scale(1)' },
+        },
       },
       borderRadius: {
         '2xl': '1rem',
@@ -115,6 +133,8 @@ export default {
         'brand': '0 4px 20px rgba(98,114,241,0.35)',
         'brand-lg': '0 8px 32px rgba(98,114,241,0.40)',
         'inner-brand': 'inset 0 2px 8px rgba(98,114,241,0.15)',
+        'glow-brand': '0 10px 36px -8px rgba(98,114,241,0.55)',
+        'glow-gold': '0 10px 36px -8px rgba(245,158,11,0.55)',
       },
       backgroundImage: {
         'gradient-brand': 'linear-gradient(135deg, #6272f1 0%, #8f5cf7 100%)',

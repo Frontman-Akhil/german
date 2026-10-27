@@ -24,7 +24,7 @@ export function AppLayout() {
   const { xpToast } = useAppStore();
 
   return (
-    <div className="min-h-dvh bg-slate-50 dark:bg-slate-950 flex">
+    <div className="app-shell min-h-dvh bg-slate-50 dark:bg-slate-950 flex overflow-x-clip">
       {/* Desktop Sidebar */}
       <div className="hidden lg:flex lg:flex-col lg:w-[260px] lg:flex-shrink-0 lg:fixed lg:inset-y-0 lg:left-0 lg:z-30">
         <Sidebar />
@@ -46,7 +46,7 @@ export function AppLayout() {
       {/* Main Content */}
       <div className="flex-1 flex flex-col lg:ml-[260px] min-w-0">
         {/* Mobile Header */}
-        <header className="lg:hidden sticky top-0 z-20 glass border-b border-slate-200 dark:border-slate-700/50 px-4 py-3 flex items-center gap-3">
+        <header className="lg:hidden sticky top-0 z-20 glass safe-top border-b border-slate-200 dark:border-slate-700/50 px-4 py-3 flex items-center gap-3">
           <button
             onClick={() => setMobileSidebarOpen(true)}
             className="btn-ghost btn-icon"
@@ -61,8 +61,8 @@ export function AppLayout() {
         </header>
 
         {/* Page Content */}
-        <main className="flex-1 overflow-auto">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 py-6 pb-28 lg:pb-8">
+        <main className="flex-1 overflow-y-auto overflow-x-hidden">
+          <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-5 sm:py-6 pb-28 lg:pb-8">
             <Outlet />
           </div>
         </main>
@@ -76,7 +76,7 @@ export function AppLayout() {
                 to={path}
                 className={({ isActive }) =>
                   clsx(
-                    'flex flex-col items-center gap-0.5 px-3 py-1.5 rounded-xl text-[10px] font-medium transition-all',
+                    'flex flex-1 min-w-0 flex-col items-center gap-0.5 px-2 py-1.5 rounded-xl text-[10px] font-medium transition-all',
                     isActive
                       ? 'text-brand-600 dark:text-brand-400 bg-brand-50 dark:bg-brand-950/40'
                       : 'text-slate-500 dark:text-slate-400',
