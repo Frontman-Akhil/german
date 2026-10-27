@@ -47,7 +47,7 @@ export function Dashboard() {
   return (
     <div className="space-y-6 animate-fade-in">
       {/* Welcome Banner */}
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-brand p-6 shadow-brand-lg">
+      <div className="hero-banner relative overflow-hidden rounded-3xl bg-gradient-brand p-6 shadow-brand-lg">
         <div className="absolute inset-0 bg-hero-pattern opacity-20" />
         <div className="relative flex items-start justify-between">
           <div>
@@ -89,7 +89,7 @@ export function Dashboard() {
               key={to}
               to={to}
               className={clsx(
-                'rounded-2xl p-4 flex flex-col gap-2 transition-all hover:-translate-y-0.5 hover:shadow-xl active:scale-[0.97]',
+                'quick-tile rounded-2xl p-4 flex flex-col gap-2 transition-all hover:-translate-y-0.5 hover:shadow-xl active:scale-[0.97]',
                 color,
               )}
             >

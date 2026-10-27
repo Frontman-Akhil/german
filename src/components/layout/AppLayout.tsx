@@ -26,7 +26,7 @@ export function AppLayout() {
   return (
     <div className="app-shell min-h-dvh bg-slate-50 dark:bg-slate-950 flex overflow-x-clip">
       {/* Desktop Sidebar */}
-      <div className="hidden lg:flex lg:flex-col lg:w-[260px] lg:flex-shrink-0 lg:fixed lg:inset-y-0 lg:left-0 lg:z-30">
+      <div className="hidden lg:flex lg:flex-col lg:w-[280px] lg:flex-shrink-0 lg:fixed lg:inset-y-0 lg:left-0 lg:z-30 lg:p-3">
         <Sidebar />
       </div>
 
@@ -44,9 +44,9 @@ export function AppLayout() {
       )}
 
       {/* Main Content */}
-      <div className="flex-1 flex flex-col lg:ml-[260px] min-w-0">
+      <div className="flex-1 flex flex-col lg:ml-[280px] min-w-0">
         {/* Mobile Header */}
-        <header className="lg:hidden sticky top-0 z-20 glass safe-top border-b border-slate-200 dark:border-slate-700/50 px-4 py-3 flex items-center gap-3">
+        <header className="mobile-header lg:hidden sticky top-0 z-20 glass safe-top border-b border-slate-200 dark:border-slate-700/50 px-4 py-3 flex items-center gap-3">
           <button
             onClick={() => setMobileSidebarOpen(true)}
             className="btn-ghost btn-icon"
@@ -68,7 +68,7 @@ export function AppLayout() {
         </main>
 
         {/* Mobile Bottom Navigation */}
-        <nav className="lg:hidden fixed bottom-0 inset-x-0 z-20 glass border-t border-slate-200 dark:border-slate-700/50 safe-bottom" aria-label="Mobile navigation">
+        <nav className="mobile-nav lg:hidden fixed bottom-0 inset-x-0 z-20 glass border-t border-slate-200 dark:border-slate-700/50 safe-bottom" aria-label="Mobile navigation">
           <div className="flex items-center justify-around px-2 py-2">
             {MOBILE_NAV.map(({ path, icon: Icon, label }) => (
               <NavLink

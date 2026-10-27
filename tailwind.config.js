@@ -10,7 +10,7 @@ export default {
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
-        display: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+        display: ['Sora', 'Inter', 'system-ui', 'sans-serif'],
       },
       transitionTimingFunction: {
         spring: 'cubic-bezier(0.22, 1, 0.36, 1)',
@@ -137,7 +137,7 @@ export default {
         'glow-gold': '0 10px 36px -8px rgba(245,158,11,0.55)',
       },
       backgroundImage: {
-        'gradient-brand': 'linear-gradient(135deg, #6272f1 0%, #8f5cf7 100%)',
+        'gradient-brand': 'linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #c026d3 100%)',
         'gradient-gold': 'linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%)',
         'gradient-success': 'linear-gradient(135deg, #22c55e 0%, #4ade80 100%)',
         'gradient-dark': 'linear-gradient(135deg, #1e1b4b 0%, #312e81 100%)',

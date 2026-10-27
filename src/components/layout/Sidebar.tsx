@@ -41,7 +41,7 @@ export function Sidebar({ onClose }: { onClose?: () => void }) {
   const levelPercent = levelProgress?.overallPercent ?? 0;
 
   return (
-    <aside className="flex flex-col h-full bg-white dark:bg-slate-950 border-r border-slate-100 dark:border-slate-800">
+    <aside className="sidebar-panel flex flex-col h-full bg-white dark:bg-slate-950 border-r border-slate-100 dark:border-slate-800">
       {/* Header */}
       <div className="flex items-center justify-between px-4 py-5 border-b border-slate-100 dark:border-slate-800">
         <div className="flex items-center gap-3">
@@ -49,7 +49,10 @@ export function Sidebar({ onClose }: { onClose?: () => void }) {
             D
           </div>
           <div>
-            <h1 className="font-display font-bold text-slate-900 dark:text-white text-sm leading-none">DeutschMeister</h1>
+            <div className="flex items-center gap-1.5">
+              <h1 className="font-display font-bold text-slate-900 dark:text-white text-sm leading-none">DeutschMeister</h1>
+              <span className="pro-badge">PRO</span>
+            </div>
             <p className="text-[10px] text-slate-500 dark:text-slate-400 mt-0.5">German Language Academy</p>
           </div>
         </div>
